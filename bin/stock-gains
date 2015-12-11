@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+# require 'stock-gains'
+require_relative '../lib/stock_gains'
+
+StockGains::CLI.new.call

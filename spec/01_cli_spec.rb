@@ -1,7 +1,7 @@
-require_relative '../lib/stock-lookup/cli'
+require_relative '../lib/stock-gains/cli'
 
 describe 'CLI' do 
-  let(:stocks){StockLookup::CLI.new}
+  let(:stocks){StockGains::CLI.new}
 
   describe '#negative?' do 
     it 'has a negative? instance method' do 

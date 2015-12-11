@@ -1,4 +1,4 @@
-class StockLookup::Stocks
+class StockGains::Stocks
   attr_accessor :name, :current_price, :previous_close, :shares
 
   def initialize(name=nil, current_price=nil, previous_close=nil, shares=nil)

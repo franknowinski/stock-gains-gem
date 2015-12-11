@@ -1,3 +1,3 @@
-module StockLookup
+module StockGains
   VERSION = "0.1.0"
 end

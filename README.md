@@ -1,1 +1,1 @@
-# stock-lookup-gem
+# stock-gains-gem

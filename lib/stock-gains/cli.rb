@@ -1,6 +1,6 @@
-module StockLookup
+module StockGains
 end 
-class StockLookup::CLI
+class StockGains::CLI
   attr_accessor :total
 
   def initialize
@@ -17,14 +17,14 @@ class StockLookup::CLI
     puts "\n"
     puts "Stocks in Your Portfolio".center(42)
     puts " " + "-" * 38
-    StockLookup::Stocks.all.each.with_index(1) do |stock, i| 
+    StockGains::Stocks.all.each.with_index(1) do |stock, i| 
       puts " #{i}. #{stock.name}"
     end
     puts 
   end
 
   def calculate_gains
-    StockLookup::Stocks.all.each do |s|
+    StockGains::Stocks.all.each do |s|
       @total += (s.current_price.to_f * s.shares.to_i) - (s.previous_close.to_f * s.shares.to_f)
     end
     @total = @total.round(2).to_f 
@@ -42,4 +42,3 @@ class StockLookup::CLI
     " " * (9 - total.to_s.each_char.count)
   end
 end
-
