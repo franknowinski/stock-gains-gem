@@ -9,19 +9,18 @@ class StockGains::Stocks
   end
 
   def self.all 
-    @@all ||= read_stocks_from_csv
+    @@all ||= create_stocks
   end
 
-  def self.read_stocks_from_csv
+  def self.create_stocks
     CSV.foreach("portfolio.csv").collect do |stock|
-      s = (create_stock(stock) << stock[1]).flatten
+      s = (retrieve_stock(stock) << stock[1]).flatten
       new(s[0], s[1], s[2], s[3])
     end
   end
 
-  def self.create_stock(stock)
+  def self.retrieve_stock(stock)
     url = "http://finance.yahoo.com/d/quotes.csv?s=#{stock[0]}&f=nap"
-
     open(url) do |csv|
       CSV.parse(csv).collect{ |row| row }
     end
