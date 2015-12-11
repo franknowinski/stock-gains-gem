@@ -9,8 +9,8 @@ class StockLookup::CLI
 
   def call
     list
-    calculate_net
-    print_net_profit
+    calculate_gains
+    print_gains
   end
 
   def list
@@ -18,46 +18,28 @@ class StockLookup::CLI
     puts "Stocks in Your Portfolio".center(42)
     puts " " + "-" * 38
     StockLookup::Stocks.all.each.with_index(1) do |stock, i| 
-      puts " #{i}. #{stock.name} "
+      puts " #{i}. #{stock.name}"
     end
     puts 
   end
 
-  def calculate_net
+  def calculate_gains
     StockLookup::Stocks.all.each do |s|
       @total += (s.current_price.to_f * s.shares.to_i) - (s.previous_close.to_f * s.shares.to_f)
     end
-    binding.pry
     @total = @total.round(2).to_f 
   end
 
-  def print_net_profit
+  def print_gains
     puts "\n"
-    puts " " * 8 + ":" + "-" * 28 + ":"  
-    puts " " * 8 + "|    TODAYS #{total > 0 ? "GAIN:" : "LOSS:"} $#{total} #{extra_spaces}|"
-    puts " " * 8 + ":" + "-" * 28 + ":"
+    puts " " * 5 + ":" + "-" * 28 + ":"  
+    puts " " * 5 + "|    TODAYS #{total > 0 ? "GAIN:" : "LOSS:"} $#{total} #{extra_spaces}|"
+    puts " " * 5 + ":" + "-" * 28 + ":"
     puts "\n"
   end
 
   def extra_spaces
-    case total.to_s.each_char.count
-    when 8
-      spaces = " " 
-    when 7 
-      spaces = "  "
-    when 6 
-      spaces = "   "
-    when 5
-      spaces = "    "
-    when 4
-      spaces = "     "
-    when 3
-      spaces = "      "
-    end
+    " " * (9 - total.to_s.each_char.count)
   end
 end
-
-
-
-
 

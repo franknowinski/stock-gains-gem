@@ -27,9 +27,3 @@ class StockLookup::Stocks
     end
   end
 end
-
-
-
-# 3494.4 / 3468.6
-
-
