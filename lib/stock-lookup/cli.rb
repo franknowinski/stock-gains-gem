@@ -27,33 +27,33 @@ class StockLookup::CLI
     StockLookup::Stocks.all.each do |s|
       @total += (s.current_price.to_f * s.shares.to_i) - (s.previous_close.to_f * s.shares.to_f)
     end
+    binding.pry
     @total = @total.round(2).to_f 
   end
 
   def print_net_profit
     puts "\n"
-    puts " " * 8 + ":" + "-" * 21 + ":"
-    puts " " * 8 + "| NET #{total > 0 ? "PROFIT:" : "LOSS:"} $#{total}#{extra_spaces}|"
-    puts " " * 8 + ":" + "-" * 21 + ":"
+    puts " " * 8 + ":" + "-" * 28 + ":"  
+    puts " " * 8 + "|    TODAYS #{total > 0 ? "GAIN:" : "LOSS:"} $#{total} #{extra_spaces}|"
+    puts " " * 8 + ":" + "-" * 28 + ":"
     puts "\n"
   end
 
   def extra_spaces
-    spaces = ""
-    case total.to_s.each_char.count 
-    when 8 
-      return spaces = " "
-    when 6 
-      spaces = " "
-    when 5
+    case total.to_s.each_char.count
+    when 8
+      spaces = " " 
+    when 7 
       spaces = "  "
-    when 4
+    when 6 
       spaces = "   "
-    when 3
+    when 5
       spaces = "    "
+    when 4
+      spaces = "     "
+    when 3
+      spaces = "      "
     end
-    spaces += "  " if total < 0
-    spaces
   end
 end
 
