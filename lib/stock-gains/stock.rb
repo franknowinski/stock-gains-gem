@@ -1,6 +1,6 @@
 class StockGains::Stock
-  attr_accessor :name, :current_price, :previous_close, :open
-  attr_accessor :one_year_trgt, :days_range, :year_range, :shares
+  attr_accessor :name, :current_price, :previous_close, :open, :one_year_trgt
+  attr_accessor :days_range, :year_range, :shares, :days_value
 
   def initialize(name, current_price, previous_close, open, one_year_trgt, days_range, year_range, shares)
     @name = name
@@ -11,10 +11,15 @@ class StockGains::Stock
     @days_range = days_range
     @year_range = year_range
     @shares = shares
+    calculate_days_value
   end
 
   def self.all 
     @@all ||= create_stock
+  end
+
+  def calculate_days_value
+    @days_value = ((self.current_price.to_f * self.shares.to_i) - (self.previous_close.to_f * self.shares.to_f)).round(2).to_f
   end
 
   def self.create_stock
