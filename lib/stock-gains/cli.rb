@@ -48,10 +48,6 @@ class StockGains::CLI
     end
   end
 
-  def extra_spaces(value)
-    value.to_s.each_char.count < 4 ? spaces = " " * (6 - value.to_s.each_char.count) : spaces = "  "
-  end
-
   def stock_lookup
     print_stock_info(StockGains::StockLookup.new.call)
   end
