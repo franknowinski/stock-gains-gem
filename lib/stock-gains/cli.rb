@@ -23,7 +23,7 @@ class StockGains::CLI
   end
 
   def valid_input?(input)
-    "all".include?(input.first) || input.map(&:to_i).all?{ |n| n.between?(1, StockGains::Stock.all.count)}
+    input.first == "all" || input.map(&:to_i).all?{ |n| n.between?(1, StockGains::Stock.all.count)}
   end
 
   def find_all(stocks)
@@ -50,5 +50,8 @@ class StockGains::CLI
 
   def stock_lookup
     print_stock_info(StockGains::StockLookup.new.call)
+    puts "Would you like to lookup another stock? ('y' or 'yes')"
+    answer = gets.strip.downcase
+    self.stock_lookup if answer == "y" || answer == "yes"
   end
 end

@@ -11,10 +11,10 @@ class StockGains::StockLookup
   end
 
   def get_tickers
-    puts "If you'd like to see stock data concerning stock(s) not included in your"
+    puts "\nIf you'd like to see stock data concerning stock(s) not included in your"
     puts "portfolio, enter the stock ticker(s) separated by a space.\n\n"
     tickers << gets.strip.scan(/\S[a-zA-Z]+/).join("+").upcase 
-    exit if tickers.include?("EXIT")
+    exit if tickers.include?("EXIT") || tickers.first == ""
   end
 
   def retreive_stock_info
