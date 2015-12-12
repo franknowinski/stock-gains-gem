@@ -52,6 +52,6 @@ class StockGains::CLI
     print_stock_info(StockGains::StockLookup.new.call)
     puts "Would you like to lookup another stock? ('y' or 'yes')"
     answer = gets.strip.downcase
-    self.stock_lookup if answer == "y" || answer == "yes"
+    stock_lookup if answer == "y" || answer == "yes"
   end
 end
