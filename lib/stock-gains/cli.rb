@@ -39,10 +39,11 @@ class StockGains::CLI
     stocks.each do |stock|
       puts "#{stock.name}".center(66)
       puts " " + "-" * 66
-      puts " Asking Price:     $#{stock.cur_price}          Day's Range:   $#{stock.d_range}"
-      puts " Previous Close:   $#{stock.prev_close}          52 Week Range: $#{stock.y_range}"
-      puts " Open:             $#{stock.open}          1 Year Target: $#{stock.year_trgt}"
-      puts " P/E Ratio:        $#{stock.pe}#{extra_spaces(stock.pe)}         EPS: $#{stock.eps}"
+      puts " Asking Price:     $#{stock.cur_price}".ljust(35, " ") + "Day's Range:    $#{stock.d_range}"
+      puts " Previous Close:   $#{stock.prev_close}".ljust(35, " ") + "52 Week Range:  $#{stock.y_range}"
+      puts " Open:             $#{stock.open}".ljust(35, " ") + "1 Year Target:  $#{stock.year_trgt}"
+      puts " P/E Ratio:        $#{stock.pe}".ljust(35, " ") + "EPS:            $#{stock.eps}"
+      puts " Day's +/-:        $#{stock.days_value}".ljust(35, " ") + "Shares:        #{stock.shares}"
       puts "\n\n"
     end
   end
