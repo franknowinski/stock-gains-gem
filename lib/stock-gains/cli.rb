@@ -11,6 +11,7 @@ class StockGains::CLI
     list
     calculate_gains
     print_gains
+
   end
 
   def list
@@ -19,7 +20,7 @@ class StockGains::CLI
     puts "\n"
     puts " Stock Name" + " " * 25 + "Todays +/-"
     puts " " + "-" * 45
-    StockGains::Stocks.all.each.with_index(1) do |stock, i|
+    StockGains::Stock.all.each.with_index(1) do |stock, i|
     stock_n = stock.name.ljust(34, " ") 
       puts " #{i}. #{stock_n} $#{stock.current_price}"
     end
@@ -27,10 +28,14 @@ class StockGains::CLI
   end
 
   def calculate_gains
-    StockGains::Stocks.all.each do |s|
+    StockGains::Stock.all.each do |s|
       @total += (s.current_price.to_f * s.shares.to_i) - (s.previous_close.to_f * s.shares.to_f)
     end
     @total = @total.round(2).to_f 
+  end
+
+  def extra_spaces
+    " " * (9 - total.to_s.each_char.count)
   end
 
   def print_gains
