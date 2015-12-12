@@ -9,16 +9,17 @@ class StockGains::CLI
 
   def start
     input = ""
-    unless input == "exit"
-      begin 
-        puts "\nTo view more stock information, enter the number(s) associated with"
-        puts "the stock or enter 'all' to view all of the stocks in your portfolio."
-
-        puts "(Separate digits with a space)\n\n"
-        input = gets.strip.scan(/\w+/)
-      end until valid_input?(input)
-      input.first == "all" ? find_all(input) : find(input) 
-    end
+    begin 
+      puts "\nTo view more stock information, enter the number associated with"
+      puts "the stock or enter 'all' to view all of the stocks in your portfolio."
+      puts "(Separate digits with a space to view multiple stocks)\n\n"
+      input = gets.strip.scan(/\w+/)
+    end until input == [] || valid_input?(input) || input.first == "exit"
+    exit if input.first == "exit" 
+    
+    input.first == "all" ? find_all(input) : find(input)
+    stock_lookup
+    puts "Goodbye!"
   end
 
   def valid_input?(input)
@@ -41,12 +42,16 @@ class StockGains::CLI
       puts " Asking Price:     $#{stock.cur_price}          Day's Range:   $#{stock.d_range}"
       puts " Previous Close:   $#{stock.prev_close}          52 Week Range: $#{stock.y_range}"
       puts " Open:             $#{stock.open}          1 Year Target: $#{stock.year_trgt}"
-      puts " Day's +/-:        $#{stock.days_value}#{extra_spaces(stock.days_value)}         Shares: #{stock.shares}"
+      puts " P/E Ratio:        $#{stock.pe}#{extra_spaces(stock.pe)}         EPS: $#{stock.eps}"
       puts "\n\n"
     end
   end
 
   def extra_spaces(value)
-    value.to_s.each_char.count < 4 ? spaces = " " * (6 - value.to_s.each_char.count) : spaces = " "
+    value.to_s.each_char.count < 4 ? spaces = " " * (6 - value.to_s.each_char.count) : spaces = "  "
+  end
+
+  def stock_lookup
+    print_stock_info(StockGains::StockLookup.new.call)
   end
 end
