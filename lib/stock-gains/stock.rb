@@ -19,7 +19,7 @@ class StockGains::Stock
   end
 
   def calculate_days_value
-    @days_value = ((self.current_price.to_f * self.shares.to_i) - (self.previous_close.to_f * self.shares.to_f)).round(2).to_f
+    @days_value = ((current_price.to_f * shares.to_f) - (previous_close.to_f * shares.to_f)).round(2).to_f
   end
 
   def self.create_stock

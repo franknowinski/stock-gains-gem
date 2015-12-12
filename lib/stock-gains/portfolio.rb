@@ -18,16 +18,14 @@ class StockGains::Portfolio
     puts " Stock Name" + " " * 25 + "Todays +/-"
     puts " " + "-" * 45
     StockGains::Stock.all.each.with_index(1) do |stock, i|
-    stock_n = stock.name.ljust(34, " ") 
-      puts " #{i}. #{stock_n} $#{stock.days_value}"
+      name = stock.name.ljust(34, " ") 
+      puts " #{i}. #{name} $#{stock.days_value}"
     end
     puts 
   end
 
   def calculate_gains
-    StockGains::Stock.all.each do |stock|
-      @total += stock.days_value
-    end
+    StockGains::Stock.all.each{ |stock|  @total += stock.days_value } 
     @total = @total.round(2).to_f
   end
 
