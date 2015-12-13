@@ -1,11 +1,6 @@
 module StockGains 
   class StockGains::CLI
-    attr_accessor :tickers
-
-    def initialize
-      @tickers = []
-    end
-
+    
     def call
       StockGains::Portfolio.new.call
       start
@@ -55,16 +50,7 @@ module StockGains
     end
 
     def stock_lookup
-      input = "" 
-      loop do
-        puts "To view stocks not included in your portfolio, enter the stock ticker(s)"
-        puts "separated by a space.\n\n"
-        input = gets.strip.downcase
-        break if input == "e" || input == "exit" || input == ""
-        tickers << input.strip.scan(/\S[a-zA-Z]+/).join("+").upcase
-        print_stock_info(StockGains::StockLookup.new.retreive_stock_info(tickers))
-        tickers.clear
-      end
+      StockGains::StockLookup.new.call
     end
   end
 end
