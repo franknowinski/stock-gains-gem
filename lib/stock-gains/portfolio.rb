@@ -18,7 +18,7 @@ class StockGains::Portfolio
     puts " Stock Name" + " " * 46 + "Today's +/-"
     puts " " + "-" * 67
     StockGains::Stock.all.each.with_index(1) do |stock, i|
-      name = stock.name.ljust(57, " ") 
+      name = stock.name.ljust(55, " ") 
       puts " #{i}. #{name} $#{stock.days_value}"
     end
     puts 

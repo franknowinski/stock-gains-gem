@@ -1,25 +1,22 @@
-require_relative '../lib/stock-gains/cli'
+require 'spec_helper'
 
-describe 'CLI' do 
-  let(:stocks){StockGains::CLI.new}
+describe 'StockGains::CLI' do 
+  klass = StockGains::CLI.new
+  apple = StockGains::Stock.new("Apple Inc.", "113.07", "116.17", "114.94", "148.64", "112.85 - 115.39", "92.00 - 134.54", "12.28", "9.22", " 30")
 
-  describe '#negative?' do 
-    it 'has a negative? instance method' do 
-      expect(stocks).to respond_to(:negative?)
-    end
+  describe '.instance' do 
+    it 'creates an instance' do 
+      expect(klass).to be_an_instance_of(StockGains::CLI)  
+    end 
+  end
 
-    it 'returns an empty space ("") if the stocks current price is greater than the previous close' do
-      current_price = "116.38"
-      previous_close = "115.62"
+  describe '#valid_input?' do
+    it 'is true when the input is "all"' do
+      expect(klass.valid_input?(["all"])).to be(true)
+    end 
 
-      expect(stocks.negative?(current_price, previous_close)).to eq('')
-    end
-
-    it 'returns a negative character ("-") if the stocks current price is less than the previous close' do
-      current_price = "115.60"
-      previous_close = "115.62"
-      
-      expect(stocks.negative?(current_price, previous_close)).to eq('-')
+    it 'is true when the input values are valid' do
+      expect(klass.valid_input?(["1, 2, 3"])).to be(true)
     end
   end
 end
