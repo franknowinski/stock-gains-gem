@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'StockGains::CLI' do 
   klass = StockGains::CLI.new
 
-  describe '.instance' do 
+  describe 'instance' do 
     it 'creates an instance' do 
       expect(klass).to be_an_instance_of(StockGains::CLI)  
     end 
