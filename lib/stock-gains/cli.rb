@@ -1,6 +1,6 @@
 module StockGains 
   class StockGains::CLI
-    
+
     def call
       StockGains::Portfolio.new.call
       start
@@ -38,13 +38,13 @@ module StockGains
     def print_stock_info(stocks)
       puts "\n"
       stocks.each do |stock|
-        puts "#{stock.name}".center(66)
-        puts " " + "-" * 66
-        puts " Asking Price:     $#{stock.cur_price}".ljust(35, " ") + "Day's Range:    $#{stock.d_range}"
-        puts " Previous Close:   $#{stock.prev_close}".ljust(35, " ") + "52 Week Range:  $#{stock.y_range}"
-        puts " Open:             $#{stock.open}".ljust(35, " ") + "1 Year Target:  $#{stock.year_trgt}"
-        puts " P/E Ratio:        $#{stock.pe}".ljust(35, " ") + "EPS:            $#{stock.eps}"
-        puts " Day's +/-:        $#{stock.days_value}".ljust(35, " ") + "Shares:        #{stock.shares}"
+        puts "#{stock.name}".center(67)
+        puts " " + "-" * 68
+        puts " Asking Price:     $#{stock.cur_price}".ljust(37, " ") + "Day's Range:    $#{stock.d_range}"
+        puts " Previous Close:   $#{stock.prev_close}".ljust(37, " ") + "52 Week Range:  $#{stock.y_range}"
+        puts " Open:             $#{stock.open}".ljust(37, " ") + "1 Year Target:  $#{stock.year_trgt}"
+        puts " P/E Ratio:        $#{stock.pe}".ljust(37, " ") + "EPS:            $#{stock.eps}"
+        puts " Day's +/-:        $#{stock.days_value}".ljust(37, " ") + "Shares:        #{stock.shares}"
         puts "\n\n"
       end
     end

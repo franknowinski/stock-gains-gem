@@ -15,10 +15,10 @@ class StockGains::Portfolio
     puts "\n"
     puts "Stocks in Your Portfolio".center(66)
     puts "\n"
-    puts " Stock Name" + " " * 46 + "Todays +/-"
-    puts " " + "-" * 66
+    puts " Stock Name" + " " * 46 + "Today's +/-"
+    puts " " + "-" * 67
     StockGains::Stock.all.each.with_index(1) do |stock, i|
-      name = stock.name.ljust(55, " ") 
+      name = stock.name.ljust(57, " ") 
       puts " #{i}. #{name} $#{stock.days_value}"
     end
     puts 
@@ -31,9 +31,9 @@ class StockGains::Portfolio
 
   def print_gains
     puts "\n"
-    puts " " * 20 + ":" + "-" * 28 + ":"  
-    puts " " * 20 + "|    TODAYS #{total > 0 ? "GAIN:" : "LOSS:"} $#{total} #{extra_spaces}|"
-    puts " " * 20 + ":" + "-" * 28 + ":"
+    puts " " * 20 + ":" + "-" * 29 + ":"  
+    puts " " * 20 + "|    TODAY'S #{total > 0 ? "GAIN:" : "LOSS:"} $#{total} #{extra_spaces}|"
+    puts " " * 20 + ":" + "-" * 29 + ":"
     puts "\n"
   end
 
