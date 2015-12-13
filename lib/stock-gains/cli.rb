@@ -1,6 +1,11 @@
 module StockGains
 end 
 class StockGains::CLI
+  attr_accessor :tickers
+
+  def initialize
+    @tickers = []
+  end
 
   def call
     StockGains::Portfolio.new.call
@@ -8,25 +13,28 @@ class StockGains::CLI
   end
 
   def start
-    input = ""
-    begin 
+    input = []
+    
+    begin
       puts "\nTo view more stock information, enter the number associated with"
       puts "the stock or enter 'all' to view all of the stocks in your portfolio."
-      puts "(Separate digits with a space to view multiple stocks)\n\n"
+      puts "(Separate digits with a space to view multiple stocks)"
+      puts "(Enter 'e' at anytime throught the program to exit)\n\n"
       input = gets.strip.scan(/\w+/)
-    end until input == [] || valid_input?(input) || input.first == "exit"
-    exit if input.first == "exit" 
+    end until valid_input?(input) || input.first == "e"
     
-    input.first == "all" ? find_all(input) : find(input)
-    stock_lookup
-    puts "Goodbye!"
+    if input.first != "e"  
+      input.first == "all" ? find_all : find(input)
+      stock_lookup
+    end
+    puts "\nGoodbye!"
   end
 
   def valid_input?(input)
-    input.first == "all" || input.map(&:to_i).all?{ |n| n.between?(1, StockGains::Stock.all.count)}
+    input.first == "all" || input.map(&:to_i).all?{ |n| n.between?(1, StockGains::Stock.all.count)} || input = []
   end
 
-  def find_all(stocks)
+  def find_all
     print_stock_info(StockGains::Stock.all)
   end
 
@@ -49,9 +57,15 @@ class StockGains::CLI
   end
 
   def stock_lookup
-    print_stock_info(StockGains::StockLookup.new.call)
-    puts "Would you like to lookup another stock? ('y' or 'yes')"
-    answer = gets.strip.downcase
-    stock_lookup if answer == "y" || answer == "yes"
+    input = "" 
+    loop do
+      puts "To view stocks not included in your portfolio, enter the stock ticker(s)"
+      puts "separated by a space.\n\n"
+      input = gets.strip.downcase
+      break if input == "e" || input == "exit"
+      tickers << input.strip.scan(/\S[a-zA-Z]+/).join("+").upcase
+      print_stock_info(StockGains::StockLookup.new.retreive_stock_info(tickers))
+      tickers.clear
+    end
   end
 end
