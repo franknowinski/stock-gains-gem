@@ -1,6 +1,6 @@
 ## Stock-Gains-Gem
 
-This Ruby gem uses the Yahoo Finance API to provide three valuable stock market functions for the user. First, it imports the users portoflio from an external `CSV` file, calculates each stocks gain/loss for the day, then prints out the combined total. Next, it gives the user the option to display generic stock data of any or all of the stocks in their portfolio. Finally, it allows the user to lookup stock data regarding any stock of their choosing.  
+This Ruby gem uses the Yahoo Finance API to provide three valuable stock market functions for the user. First, it imports the users portoflio from an external `CSV` file, calculates each stocks gain/loss for the day, then prints out the combined total. Next, it gives the user the option to display generic stock data of any or all of the stocks in their portfolio. Finally, it allows the user lookup stock data regarding any stock(s) of their choosing.  
 
 ## Installation
 
@@ -9,6 +9,10 @@ You can install this gem via `gem install stock-gains-gem`. Before you run this 
 ![](screenshots/portfolio_csv.png)
 
 ## Usage
+
+### 
+
+The app first returns to the user the accumulated total of all of thier stocks. 
 
 ## Development 
 After checking out the repo, run `bundle exec bin/setup` to install dependencies.
