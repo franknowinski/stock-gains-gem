@@ -1,6 +1,6 @@
 ## Stock-Gains-Gem
 
-This Ruby gem uses the Yahoo Finance API to provide three valuable stock market functions for the user. First, it imports the users portoflio from a `CSV` file, calculates each stocks earnings/losses for the day, then returns the total balance they've earned—or lost. Next, it gives the user the option to display generic stock information of any or all of the stocks in their portfolio. Lastly, it allows the user to lookup stock data of any stock(s) of their choosing.  
+This Ruby gem uses the Yahoo Finance API to provide three valuable stock market functions for the user. First, it imports the users portoflio from a `CSV` file, calculates each stocks earnings/losses for the day, then returns the total balance your portfolio has earned/lost. Next, it gives the user the option to display generic stock information of any or all of the stocks in their portfolio. Lastly, it allows the user to lookup stock data of any stock(s) of their choosing.  
 
 ## Installation
 
@@ -12,7 +12,7 @@ You can install this gem via `gem install stock-gains-gem`. Before you run this 
 
 ### Today's Gain/Loss
 
-What makes Stock Gains useful is that not only does it compute what each individual stock in your *portfolio* has earned/lost for that day, it computes the total balance your portfolio has earned/lost for that day. These calculations are displayed for the user in the following table:
+What makes Stock Gains useful is that not only does it compute what each individual stock in your portfolio has earned/lost for that day, it computes the total balance your *portfolio* has earned/lost for that day. These calculations are displayed for the user in the following table:
 
 ![](screenshots/portfolio_table.png)
 
@@ -29,7 +29,7 @@ The user then has the option to view additional stock information regarding any 
 
 ### Stock Lookup
 
-Finally, look up any stock on the market by enter the stock ticker. To view multiple stocks, separate the stock tickers with a space.
+Finally, look up any stock on the market by entering the stock ticker. To view multiple stocks, separate the stock tickers with a space.
 
 ![](screenshots/stock_lookup.png)
 
