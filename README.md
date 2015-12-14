@@ -4,7 +4,7 @@ This Ruby gem uses the Yahoo Finance API to provide three valuable stock market 
 
 ## Installation
 
-You can install this gem via `gem install stock-gains-gem`. Before you run this app you'll need to set up a `CSV` file containing all of the stocks in your portfolio so they can be imported into the app. Start by cloning the respository to your local computer. Then, on the top-level of the directory, create a file called `portfolio.csv` and insert the stock ticker followed by the quantity of shares you hold for each stock in your portfolio. Be sure to input each stock on a new line and separate the two values by a comma (see the diagram below). Now run `stock-gains` in the CLI to view your gains! 
+You can install this gem via `gem install stock-gains`. Before you run this app you'll need to set up a `CSV` file containing all of the stocks in your portfolio so they can be imported into the app. Start by cloning the respository to your local computer. Then, on the top-level of the directory, create a file called `portfolio.csv` and insert the stock ticker followed by the quantity of shares you hold for each stock in your portfolio. Be sure to input each stock on a new line and separate the two values by a comma (see the diagram below). Now run `stock-gains` in the CLI to view your gains! 
 
 ![](screenshots/portfolio_csv.png)
 
