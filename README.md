@@ -10,11 +10,15 @@ You can install this gem via `gem install stock-gains-gem`. Before you run this 
 
 ## Usage
 
-### Combined Total
+### Today's Gain/Loss
 
-Upon running Stock Gains, it immediately returns the following table: 
+When Stock Gains is run it promplty calculates each stocks net gain/loss for the day, computes an accumulated total of all gains/losses, and displays it in following table: 
 
 ![](screenshots/display_portfolio.png)
+
+### Stock Data
+
+The user can then opt to 
 
 ## Development 
 After checking out the repo, run `bundle exec bin/setup` to install dependencies.
