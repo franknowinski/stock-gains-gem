@@ -10,9 +10,11 @@ You can install this gem via `gem install stock-gains-gem`. Before you run this 
 
 ## Usage
 
-### 
+### Combined Total
 
-The app first returns to the user the accumulated total of all of thier stocks. 
+Upon running Stock Gains, it immediately returns the following table: 
+
+![](screenshots/display_portfolio.png)
 
 ## Development 
 After checking out the repo, run `bundle exec bin/setup` to install dependencies.
