@@ -17,14 +17,14 @@ class StockGains::Stock
   end
 
   def self.all 
-    @@all ||= create_stock
+    @@all ||= create_stock_from_portfolio
   end
 
   def calculate_days_value
     @days_value = ((cur_price.to_f * shares.to_f) - (prev_close.to_f * shares.to_f)).round(2).to_f 
   end
 
-  def self.create_stock
+  def self.create_stock_from_portfolio
     CSV.foreach("portfolio.csv").collect do |stock|
       s = (retrieve_stock(stock) << stock[1]).flatten
       new(s[0], s[1], s[2], s[3], s[4], s[5], s[6], s[7], s[8], s[9])

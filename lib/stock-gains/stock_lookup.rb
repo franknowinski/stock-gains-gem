@@ -6,7 +6,6 @@ class StockGains::StockLookup
   end
 
   def call
-    binding.pry
     input = "" 
     loop do
       puts "To view stocks not included in your portfolio, enter the stock ticker(s)"
