@@ -1,10 +1,10 @@
 ## Stock-Gains-Gem
 
-This Ruby gem uses the Yahoo Finance API to provide three valuable stock market functions for the user. First, it imports the users portoflio from an external `CSV` file, calculates each stocks gain/loss for the day, then prints out the combined total. Next, it gives the user the option to display generic stock data of any or all of the stocks in their portfolio. Finally, it allows the user lookup stock data regarding any stock(s) of their choosing.  
+This Ruby gem uses the Yahoo Finance API to provide three valuable stock market functions for the user. First, it imports the users portoflio from a `CSV` file, calculates each stocks earnings/losses for the day, then returns the total balance they've earned—or lost. Next, it gives the user the option to display generic stock information of any or all of the stocks in their portfolio. Lastly, it allows the user to lookup stock data of any stock(s) of their choosing.  
 
 ## Installation
 
-You can install this gem via `gem install stock-gains-gem`. Before you run this app you'll need to set up a `CSV` file containing all of the stocks in your portfolio so they can be imported into the app. Start by cloning the respository to your local computer. Then, on the top-level of the directory, create a file called `portfolio.csv` and insert the stock ticker followed by the number of shares you hold  for each stock in your portfolio. Separate the two values by a comma and input each stock on a new line (see the diagram below). Now run `stock-gains` to start the app. 
+You can install this gem via `gem install stock-gains-gem`. Before you run this app you'll need to set up a `CSV` file containing all of the stocks in your portfolio so they can be imported into the app. Start by cloning the respository to your local computer. Then, on the top-level of the directory, create a file called `portfolio.csv` and insert the stock ticker followed by the quantity of shares you hold for each stock in your portfolio. Be sure to input each stock on a new line and separate the two values by a comma (see the diagram below). Now run `stock-gains` in the CLI to view your gains! 
 
 ![](screenshots/portfolio_csv.png)
 
@@ -12,13 +12,26 @@ You can install this gem via `gem install stock-gains-gem`. Before you run this 
 
 ### Today's Gain/Loss
 
-When Stock Gains is run it promplty calculates each stocks net gain/loss for the day, computes an accumulated total of all gains/losses, and displays it in following table: 
+What makes Stock Gains useful is that not only does it compute what each individual stock in your portfolio has earned/lost for that day, it computes the total balance your portfolio has earned/lost for that day. These calculations are displayed for the user in the following table:
 
-![](screenshots/display_portfolio.png)
+![](screenshots/portfolio_table.png)
 
-### Stock Data
+### Stock Information
 
-The user can then opt to 
+The user then has the option to view additional stock information regarding any stock in their portfolio. There are four possible entries:
+
+  * Enter *all* to display stock data on all of the stocks in your portfolio
+  * Enter the digit, or digits, corresponding to the stocks you want to look up,separated by a space
+  * Enter *e* to exit the program
+  * Press enter to move onto the next stage 
+
+![](screenshots/portfolio_data.png)
+
+### Stock Lookup
+
+Finally, look up any stock on the market by enter the stock ticker. To view multiple stocks, separate the stock tickers with a space.
+
+![](screenshots/stock_lookup.png)
 
 ## Development 
 After checking out the repo, run `bundle exec bin/setup` to install dependencies.

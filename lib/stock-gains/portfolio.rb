@@ -13,7 +13,7 @@ class StockGains::Portfolio
 
    def list
     puts "\n"
-    puts "Stocks in Your Portfolio".center(66)
+    puts "Stocks in Your Portfolio".center(68)
     puts "\n"
     puts " Stock Name" + " " * 46 + "Today's +/-"
     puts " " + "-" * 67
