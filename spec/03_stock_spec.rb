@@ -26,7 +26,7 @@ describe 'StockGains::Stock' do
 
   describe '.retrieve_stock' do 
     it 'retrieves stock values from the Yahoo! Finance API' do 
-      expect(StockGains::Stock.retrieve_stock(["AAPL"])).to eq([["Apple Inc.", "113.07", "116.17", "114.94", "148.64", "112.85 - 115.39", "92.00 - 134.54", "12.28", "9.22"]])
+      expect(StockGains::Stock.retrieve_stock(["AAPL"])).to match_array([["Apple Inc.", "113.07", "116.17", "114.94", "148.64", "112.85 - 115.39", "92.00 - 134.54", "12.28", "9.22"]])
     end
   end
 end
