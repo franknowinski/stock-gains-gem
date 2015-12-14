@@ -12,7 +12,7 @@ You can install this gem via `gem install stock-gains-gem`. Before you run this 
 
 ### Today's Gain/Loss
 
-What makes Stock Gains useful is that not only does it compute what each individual stock in your portfolio has earned/lost for that day, it computes the total balance your portfolio has earned/lost for that day. These calculations are displayed for the user in the following table:
+What makes Stock Gains useful is that not only does it compute what each individual stock in your *portfolio* has earned/lost for that day, it computes the total balance your portfolio has earned/lost for that day. These calculations are displayed for the user in the following table:
 
 ![](screenshots/portfolio_table.png)
 
@@ -20,9 +20,9 @@ What makes Stock Gains useful is that not only does it compute what each individ
 
 The user then has the option to view additional stock information regarding any stock in their portfolio. There are four possible entries:
 
-  * Enter *all* to display stock data on all of the stocks in your portfolio
-  * Enter the digit, or digits, corresponding to the stocks you want to look up,separated by a space
-  * Enter *e* to exit the program
+  * Enter `all` to display stock data on all of the stocks in your portfolio
+  * Enter the digit, or digits, corresponding to the stocks you want to look up, separated by a space
+  * Enter `e` to exit the program
   * Press enter to move onto the next stage 
 
 ![](screenshots/portfolio_data.png)
