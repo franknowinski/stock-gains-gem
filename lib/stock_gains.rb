@@ -2,10 +2,7 @@ require 'pry'
 require 'open-uri'
 require 'csv'
 
-require_relative 'stock-gains/cli'
-require_relative 'stock-gains/stock'
-require_relative 'stock-gains/portfolio'
-require_relative 'stock-gains/stock_lookup'
+Dir[File.join(File.dirname(__FILE__), "stock-gains", "*.rb")].each {|f| require_relative f}
 
 module StockGains
 end
