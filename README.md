@@ -20,16 +20,16 @@ What makes Stock Gains useful is that not only does it compute what each individ
 
 The user then has the option to view additional stock information regarding any stock in their portfolio. There are four possible entries:
 
-  * Enter `all` to display stock data on all of the stocks in your portfolio
-  * Enter the digit, or digits, corresponding to the stocks you want to look up, separated by a space
-  * Enter `e` to exit the program
+  * Enter `all` to display stock data regarding all of the stocks in your portfolio
+  * Enter the digit, or digits, corresponding to the stocks in your portfolio that you want to lookup (separated by a space)
   * Press enter to move onto the next stage 
+  * Enter `e` to exit the program
 
 ![](screenshots/portfolio_data.png)
 
 ### Stock Lookup
 
-Finally, look up any stock on the market by entering the stock ticker. To view multiple stocks, separate the stock tickers with a space.
+Finally, lookup any stock on the market by entering the stock ticker. To view multiple stocks, separate the stock tickers with a space.
 
 ![](screenshots/stock_lookup.png)
 
