@@ -11,7 +11,7 @@ class StockGains::StockLookup
       puts "Enter the stock ticker(s) of any stock you'll like to view."
       puts "Separated stock tickers with a space.\n\n"
       input = gets.strip.downcase
-      break if input == "e" || input == "exit" || input == ""
+      break if input == "e" || input == ""
       tickers << input.strip.scan(/\S[a-zA-Z]+/).join("+").upcase
       StockGains::CLI.new.print_stock_info(retrieve_stock_info(tickers))
       tickers.clear

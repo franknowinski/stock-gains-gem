@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stock-gains (0.1.4)
+    stock-gains (0.1.6)
 
 GEM
   remote: https://rubygems.org/

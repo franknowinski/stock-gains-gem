@@ -13,7 +13,7 @@ module StockGains
         puts "the stock or enter 'all' to view all of the stocks in your portfolio."
         puts "Separate digits with a space to view multiple stocks."
         puts "(Enter 'e' at anytime throughout the program to exit)\n\n"
-        input = gets.strip.scan(/\w+/)
+        input = gets.strip.downcase.scan(/\w+/)
       end until valid_input?(input) || input.first == "e"
       
       if input.first != "e"   
