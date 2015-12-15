@@ -14,7 +14,7 @@ You can install this gem via `gem install stock-gains`. Before you run this app 
 
 What makes Stock Gains useful is that not only does it compute what each individual stock in your portfolio has earned/lost for that day, it computes the total balance your *portfolio* has earned/lost for that day. These calculations are displayed for the user in the following table:
 
-![](screenshots/port_table.png)
+![](screenshots/portfolio_table.png)
 
 ### Stock Information
 
