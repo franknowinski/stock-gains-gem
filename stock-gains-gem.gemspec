@@ -6,7 +6,7 @@ require 'stock-gains/version'
 Gem::Specification.new do |spec|
   spec.authors       = ["Frank Nowinski"]
   spec.email         = ["nowinski.frank@gmail.com"]
-  spec.description   = %q{This Ruby gem uses the Yahoo Finance API to provide three valuable stock market functions for the user. First, it imports the users portfolio from a `CSV` file, calculates each stocks earnings/losses of the day, adds them together and returns an accumulated balance of their portfolios total earnings/losses for the day. Next, it gives the user the option to display generic stock information of any or all stocks in their portfolio. Lastly, it allows the user to lookup stock data of any stock(s) of their choosing (for more informations see https://github.com/frankNowinski/stock-gains).}
+  spec.description   = %q{This Ruby gem uses the Yahoo Finance API to provide three valuable stock market functions for the user. First, it imports the users portfolio from a CSV file, calculates each stocks earnings/losses of the day, adds them together and returns an accumulated balance of the users total earnings/losses for the day. Next, it gives the user the option to display generic stock information of any or all stocks in their portfolio. Lastly, it allows the user to lookup stock data of any stock(s) of their choosing (for more information see https://github.com/frankNowinski/stock-gains).}
   spec.summary       = %q{https://github.com/frankNowinski/stock-gains}
   spec.homepage      = "https://learn.co"
 
