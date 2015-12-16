@@ -1,2 +1,1 @@
-require_relative '../lib/stock_gains'
-require 'pry'
+require_relative '../config/environment'
