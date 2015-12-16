@@ -16,7 +16,7 @@ module StockGains
         input = gets.strip.downcase.scan(/\w+/)
       end until valid_input?(input) || input.first == "e"
       
-      if input.first != "e"   
+      if input.first != "e" 
         input.first == "all" ? find_all : find(input)
         stock_lookup
       end
@@ -31,8 +31,8 @@ module StockGains
       print_stock_info(StockGains::Stock.all)
     end
 
-    def find(stock)
-      print_stock_info(stock.map(&:to_i).collect{ |s| StockGains::Stock.all[s-1] })
+    def find(input)
+      print_stock_info(input.map(&:to_i).collect{ |s| StockGains::Stock.all[s-1] })
     end
 
     def print_stock_info(stocks)
