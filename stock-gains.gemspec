@@ -1,5 +1,5 @@
 # coding: utf-8
-lib = File.expand_path('../libs', __FILE__)
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'stock-gains/version'
 
@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.executables   = ["stock-gains"]
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.name          = "stock-gains"
-  spec.require_paths = ["lib", "config/environment"]
+  spec.require_paths = ["lib", "lib/stock_gains"]
   spec.version       = StockGains::VERSION
   spec.license       = "MIT"
 
