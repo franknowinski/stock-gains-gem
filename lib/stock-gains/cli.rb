@@ -2,15 +2,22 @@ module StockGains
   class StockGains::CLI
 
     def call
-      StockGains::Portfolio.new.call
-      start
+      begin
+        StockGains::Portfolio.new.call
+        start
+      rescue
+        puts "\n\nTo upload your portfolio to Stock Gains, see installation at:"
+        puts "https://github.com/frankNowinski/stock-gains\n\n"
+        stock_lookup
+      end 
+      puts "\nGoodbye!"
     end
 
     def start
       input = ""
       begin
         puts "\nTo view more stock information, enter the number associated with"
-        puts "the stock or enter 'all' to view all of the stocks in your portfolio."
+        puts "the stock name in your portfolio or enter 'all' to display all."
         puts "Separate digits with a space to view multiple stocks."
         puts "(Enter 'e' at anytime throughout the program to exit)\n\n"
         input = gets.strip.downcase.scan(/\w+/)
@@ -20,7 +27,6 @@ module StockGains
         input.first == "all" ? find_all : find(input)
         stock_lookup
       end
-      puts "\nGoodbye!"
     end
 
     def valid_input?(input)

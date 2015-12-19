@@ -25,7 +25,7 @@ class StockGains::Portfolio
   end
 
   def calculate_gains
-    StockGains::Stock.all.each{ |stock|  @total += stock.days_value } 
+    StockGains::Stock.all.collect{ |stock|  @total += stock.days_value } 
     @total = @total.round(2).to_f
   end
 

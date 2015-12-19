@@ -23,4 +23,11 @@ describe 'StockGains::CLI' do
       expect(cli.valid_input?(["none"])).to be_falsey
     end
   end
+
+  describe 'user inputs' do 
+    it 'responds to "e"' do 
+      expect(self).to receive(:gets).and_return('e')
+      expect {cli.start}.to output(/Goodbye!/).to_stdout
+    end
+  end
 end

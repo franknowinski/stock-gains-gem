@@ -9,7 +9,7 @@ class StockGains::StockLookup
     input = "" 
     loop do
       puts "Enter the stock ticker(s) of any stock you'd like to view."
-      puts "Separated stock tickers with a space.\n\n"
+      puts "Separate stock tickers with a space.\n\n"
       input = gets.strip.downcase
       break if input == "e" || input == ""
       tickers << input.strip.scan(/\S[a-zA-Z]+/).join("+").upcase
